@@ -1,3 +1,52 @@
 {
-  "extends": "next/core-web-vitals"
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "prettier", "import"],
+    "extends": [
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "next"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "import/no-duplicates": "error", //Report repeated import of the same module in multiple places
+        "import/newline-after-import": "error", //Enforce a newline after import statementsß
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    ["parent", "sibling"],
+                    "index",
+                    "object",
+                    "type"
+                ],
+                "newlines-between": "always"
+            }
+        ], //Enforce a convention in module import order
+        "react/jsx-sort-props": [
+            2,
+            {
+                "callbacksLast": true,
+                "shorthandFirst": false,
+                "shorthandLast": true,
+                "ignoreCase": true,
+                "noSortAlphabetically": false
+            }
+        ], //Enforce sorting props
+        "@next/next/no-html-link-for-pages": [
+            "error",
+            "apps/focus-store/pages"
+        ],
+        "@typescript-eslint/no-unused-vars": "error"
+    }
 }

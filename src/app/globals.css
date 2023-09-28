@@ -2,17 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("/assets/fonts/OpenSans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("/assets/fonts/OpenSans/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("/assets/fonts/OpenSans/OpenSans-Light.ttf");
+}
+
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 14, 20, 20;
+    --background-end-rgb: 14, 20, 20;
   }
 }
 
