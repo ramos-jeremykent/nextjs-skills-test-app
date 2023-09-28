@@ -1,6 +1,6 @@
 export const mainArticleContent = {
   id: 1,
-  title: "ANSWER YOUR BODY'S NEEDS",
+  title: "Answer Your Body's Needs",
   content:
     "The way ingredients are sourced affects the way we nourish our\
       bodies. Author Mark Schatzer believes our body naturally develops\

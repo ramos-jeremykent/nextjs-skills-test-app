@@ -1,6 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import { mainArticleContent } from "./definitions/main-article";
+import { articlesData } from "./definitions/articles";
+
+export const metadata: Metadata = {
+  title: `${mainArticleContent.title} | Filta Skills Test App`,
+  description: mainArticleContent.content,
+};
 
 export default function Home() {
   return (
