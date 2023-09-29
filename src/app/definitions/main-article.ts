@@ -17,14 +17,17 @@ export const mainArticleContent = {
   },
   images: [
     {
+      id: 1,
       src: "/assets/component-01/Image-01@2x.jpg",
       alt: "Image 01",
     },
     {
+      id: 2,
       src: "/assets/component-01/Image-02@2x.jpg",
       alt: "Image 02",
     },
     {
+      id: 3,
       src: "/assets/component-01/Image-03@2x.jpg",
       alt: "Image 03",
     },
