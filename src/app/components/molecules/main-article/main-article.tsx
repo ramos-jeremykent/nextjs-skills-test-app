@@ -1,6 +1,13 @@
+"use client";
+
+import * as React from "react";
+
 import { mainArticleContent } from "@/app/definitions/main-article";
 import { ArticleModel } from "@/app/interface/article";
 import { cn } from "@/app/utils/cn";
+
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 type MainArticleProps = {
   articleContent: ArticleModel;
@@ -9,6 +16,13 @@ type MainArticleProps = {
 
 export default function MainArticle(props: MainArticleProps) {
   const { articleContent, className } = props;
+  const [open, setOpen] = React.useState(false);
+  const [clickedImage, setClickedImage] = React.useState<string>("");
+
+  function handleImageClick(image: string) {
+    setOpen(true);
+    setClickedImage(image);
+  }
 
   return (
     <div className={cn("md:grid md:grid-cols-3 gap-5", className)}>
@@ -32,29 +46,60 @@ export default function MainArticle(props: MainArticleProps) {
         </div>
       </div>
       <div className="md:col-span-2 md:order-first">
-        <div className="md:flex h-full items-stretch gap-5">
-          <div className="xs:pb-3">
-            <img
-              src={mainArticleContent.images[0].src}
-              alt={mainArticleContent.images[0].alt}
-            />
-          </div>
-          <div className="sm:flex md:block md:space-y-6 xs:space-y-3">
-            <div className="sm:mb-5">
+        <div className="md:flex grid h-full gap-5">
+          <div className="sm:pb-3 sm:max-h-[200px]">
+            <a
+              className="cursor-pointer"
+              onClick={() => handleImageClick(mainArticleContent.images[0].src)}
+            >
               <img
-                src={mainArticleContent.images[1].src}
-                alt={mainArticleContent.images[1].alt}
+                src={mainArticleContent.images[0].src}
+                alt={mainArticleContent.images[0].alt}
               />
+            </a>
+          </div>
+          <div className="grid sm:flex md:block md:space-y-6 gap-5">
+            <div className="sm:mb-5">
+              <a
+                className="cursor-pointer"
+                onClick={() =>
+                  handleImageClick(mainArticleContent.images[1].src)
+                }
+              >
+                <img
+                  src={mainArticleContent.images[1].src}
+                  alt={mainArticleContent.images[1].alt}
+                />
+              </a>
             </div>
             <div>
-              <img
-                src={mainArticleContent.images[2].src}
-                alt={mainArticleContent.images[2].alt}
-              />
+              <a
+                className="cursor-pointer"
+                onClick={() =>
+                  handleImageClick(mainArticleContent.images[2].src)
+                }
+              >
+                <img
+                  src={mainArticleContent.images[2].src}
+                  alt={mainArticleContent.images[2].alt}
+                />
+              </a>
             </div>
           </div>
         </div>
       </div>
+
+      <Lightbox
+        controller={{ closeOnBackdropClick: true }}
+        carousel={{ finite: true }}
+        open={open}
+        close={() => setOpen(false)}
+        slides={[{ src: clickedImage }]}
+        render={{
+          buttonPrev: () => null,
+          buttonNext: () => null,
+        }}
+      />
     </div>
   );
 }
