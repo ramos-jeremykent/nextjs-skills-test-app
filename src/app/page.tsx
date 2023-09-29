@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { mainArticleContent } from "./definitions/main-article";
 import { articlesData } from "./definitions/articles";
 import MainArticle from "./components/molecules/main-article/main-article";
+import NewsAndArticlesCard, {
+  ArticlesCard,
+} from "./components/molecules/article-card/article-card";
 
 export const metadata: Metadata = {
   title: `${mainArticleContent.title} | Filta Skills Test App`,
@@ -16,6 +19,11 @@ export default function Home() {
         <p className="uppercase text-5xl text-center font-openSansLight">
           All the lastest from AEG
         </p>
+      </div>
+      <div>
+        {articlesData.map((article) => (
+          <ArticlesCard content={article} />
+        ))}
       </div>
     </main>
   );

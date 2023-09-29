@@ -9,6 +9,14 @@ export interface ArticleModel {
   images: ArticleImages[];
 }
 
+export interface ArticleCardModel {
+  id: number;
+  title: string;
+  excerpt: string;
+  link: string;
+  main_photo: string;
+}
+
 export interface ArticleFooter {
   title: string;
   content: string;
