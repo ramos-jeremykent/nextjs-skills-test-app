@@ -1,15 +1,17 @@
 import { mainArticleContent } from "@/app/definitions/main-article";
 import { ArticleModel } from "@/app/interface/article";
+import { cn } from "@/app/utils/cn";
 
 type MainArticleProps = {
   articleContent: ArticleModel;
+  className?: string;
 };
 
 export default function MainArticle(props: MainArticleProps) {
-  const { articleContent } = props;
+  const { articleContent, className } = props;
 
   return (
-    <div className="md:grid md:grid-cols-3 gap-5">
+    <div className={cn("md:grid md:grid-cols-3 gap-5", className)}>
       <div className="min-[320px]:mb-8">
         <div className="space-y-2 mt-4 mb-9">
           <h1 className="md:pr-5 text-[1.8rem] uppercase font-openSansLight pb-1">

@@ -23,7 +23,7 @@ export function ArticlesCard(props: ArticlesProps) {
   return (
     <div
       id={`article-${id}`}
-      className="max-w-[455px]"
+      className="max-w-[500px]"
       onClick={handleOnArticleClick}
     >
       <div className="flex flex-col shadow-lg overflow-visible p-4">

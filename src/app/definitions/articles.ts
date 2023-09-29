@@ -16,7 +16,7 @@ export const articlesData = [
     main_photo: "/assets/component-02/Image-02@2x.jpg",
   },
   {
-    id: 2,
+    id: 3,
     title: "Taking Taste Further",
     excerpt:
       "This exclusive cookbook gives you all the know-how you need. We've designed it to make sure you get the most out of our products - and the best out of your food.",
