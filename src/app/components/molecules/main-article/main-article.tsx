@@ -13,7 +13,7 @@ export default function MainArticle(props: MainArticleProps) {
   return (
     <div className={cn("md:grid md:grid-cols-3 gap-5", className)}>
       <div className="min-[320px]:mb-8">
-        <div className="space-y-2 mt-4 mb-9">
+        <div className="space-y-2 mb-9">
           <h1 className="md:pr-5 text-[1.8rem] uppercase font-openSansLight pb-1">
             {articleContent.title}
           </h1>

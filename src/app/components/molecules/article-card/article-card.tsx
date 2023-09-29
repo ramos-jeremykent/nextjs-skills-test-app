@@ -14,8 +14,6 @@ export function ArticlesCard(props: ArticlesProps) {
   const { id, title, excerpt, link, main_photo } = content;
   const coverImage = main_photo;
 
-  const newCoverImage = coverImage;
-
   function handleOnArticleClick() {
     console.log(`ARTICLE CLICKED: ${title}`);
   }
@@ -31,18 +29,18 @@ export function ArticlesCard(props: ArticlesProps) {
           <div className="h-[360px] w-full relative hover:cursor-pointer border-b-4 border-red-600">
             <Image
               alt="News Image"
-              blurDataURL={newCoverImage}
+              blurDataURL={coverImage}
               layout="fill"
               objectFit="cover"
               placeholder="blur"
-              src={newCoverImage}
+              src={coverImage}
             />
           </div>
         </div>
         <div className="flex-1 flex flex-col justify-between">
           <div className="flex-1">
             <a href={link} className="block mt-2">
-              <p className="text-lg pt-4 font-openSansRegular sm:text-body md:text-header6 lg:text-2header6 text-Dark">
+              <p className="text-lg pt-4 font-openSansBold sm:text-body md:text-header6 lg:text-2header6 text-Dark">
                 {title}
               </p>
               <p className="text-subtitle text-gray-300 font-openSansLight mt-3 text-base text-dark60 hidden sm:block text-justify">
@@ -52,7 +50,7 @@ export function ArticlesCard(props: ArticlesProps) {
           </div>
         </div>
         <div
-          className="flex-auto mt-3 cursor-pointer"
+          className="flex-auto mt-6 cursor-pointer"
           onClick={handleOnArticleClick}
         >
           <span className="border-b-2 border-red-600 pb-2">READ MORE</span>
