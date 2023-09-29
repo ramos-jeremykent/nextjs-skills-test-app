@@ -18,7 +18,7 @@ export function Home() {
         <meta name="title" content={mainArticleContent.title} />
         <meta name="content" content={mainArticleContent.content} />
       </Head>
-      <main className="min-h-screen py-24  min-[320px]:py-10 min-[320px]:px-10 md:px-18">
+      <main className="min-h-screen py-24  min-[320px]:py-10 min-[320px]:px-10 md:px-20">
         <MainArticle articleContent={mainArticleContent} />
         <div className="pt-20">
           <p className="uppercase text-5xl text-center font-openSansLight pb-8">

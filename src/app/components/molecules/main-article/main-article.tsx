@@ -18,6 +18,11 @@ export default function MainArticle(props: MainArticleProps) {
   const { articleContent, className } = props;
   const [open, setOpen] = React.useState(false);
   const [clickedImage, setClickedImage] = React.useState<string>("");
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   function handleImageClick(image: string) {
     setOpen(true);
@@ -27,16 +32,32 @@ export default function MainArticle(props: MainArticleProps) {
   return (
     <div className={cn("md:grid md:grid-cols-3 gap-5", className)}>
       <div className="min-[320px]:mb-8">
-        <div className="space-y-2 mb-9">
-          <h1 className="md:pr-5 text-[1.8rem] uppercase font-openSansLight pb-1">
+        <div
+          className={`transition-opacity duration-500 space-y-2 mb-9 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <h1
+            className={cn(
+              "md:pr-5 text-[1.8rem] uppercase font-openSansLight pb-1"
+            )}
+          >
             {articleContent.title}
           </h1>
           <hr />
-          <p className="leading-8 pt-4 text-lg font-openSansLight text-gray-300">
+          <p
+            className={`transition-opacity duration-1000 leading-8 pt-4 text-lg font-openSansLight text-gray-300 ${
+              isVisible ? "opacity-100" : "opacity-0"
+            }`}
+          >
             {articleContent.content}
           </p>
         </div>
-        <div className="space-y-3">
+        <div
+          className={`transition-opacity duration-[1500ms] space-y-3 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <p className="text-red-700 font-openSansRegular font-semibold">
             {articleContent.footer.title}
           </p>
