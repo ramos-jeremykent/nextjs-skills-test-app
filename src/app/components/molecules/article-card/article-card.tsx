@@ -19,16 +19,13 @@ export function ArticlesCard(props: ArticlesProps) {
   }
 
   return (
-    <div
-      id={`article-${id}`}
-      className="max-w-[500px]"
-      onClick={handleOnArticleClick}
-    >
+    <div id={`article-${id}`} className="w-full" onClick={handleOnArticleClick}>
       <div className="flex flex-col shadow-lg overflow-visible p-4">
         <div className="flex-shrink-0">
-          <div className="h-[360px] w-full relative hover:cursor-pointer border-b-4 border-red-600">
+          <div className="h-[360px] w-full relative hover:cursor-pointer border-b-4 border-red-600 overflow-hidden">
             <Image
               alt="News Image"
+              className=" transform transition duration-500 hover:scale-110"
               blurDataURL={coverImage}
               layout="fill"
               objectFit="cover"
