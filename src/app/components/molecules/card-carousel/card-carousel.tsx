@@ -1,12 +1,13 @@
 "use client";
 
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/navigation";
+
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { ArticleCardModel } from "@/app/interface/article";
 import { ArticlesCard } from "../article-card/article-card";
+import { cn } from "@/app/utils/cn";
 
 /* eslint-disable-next-line */
 type NewsAndArticlesSlidesProps = {
@@ -30,29 +31,23 @@ export function CardCarousel(props: NewsAndArticlesSlidesProps) {
 
   return (
     <Swiper
-      // breakpoints={{
-      //   1024: {
-      //     width: 1024,
-      //     slidesPerView: 3,
-      //   },
-      //   // when window width is >= 640px
-      //   640: {
-      //     width: 640,
-      //     slidesPerView: 1,
-      //   },
-      //   // when window width is >= 768px
-      //   768: {
-      //     width: 768,
-      //     slidesPerView: 2,
-      //   },
-      // }}
+      className={cn(className)}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+        },
+        400: {
+          slidesPerView: 2,
+        },
+        639: {
+          slidesPerView: 3,
+        },
+      }}
       modules={[Navigation]}
       navigation={{
         nextEl: `.article-next-${id}`,
         prevEl: `.article-prev-${id}`,
       }}
-      slidesPerView={3}
-      spaceBetween={10}
     >
       {articleSlides}
     </Swiper>
