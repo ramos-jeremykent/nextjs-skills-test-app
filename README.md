@@ -30,5 +30,6 @@ bun dev
 ```
 
 > [!NOTE]
-> Install all dependecies first by running `npm install`
-> Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+>
+> - Install all dependecies first by running `npm install`
+> - Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
