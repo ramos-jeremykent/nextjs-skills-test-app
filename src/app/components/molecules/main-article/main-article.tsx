@@ -67,7 +67,11 @@ export default function MainArticle(props: MainArticleProps) {
         </div>
       </div>
       <div className="md:col-span-2 md:order-first">
-        <div className="md:flex grid h-full gap-5">
+        <div
+          className={`transition-opacity duration-700 md:flex grid h-full gap-5 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <div className="sm:pb-3 sm:max-h-[200px]">
             <a
               className="cursor-pointer"

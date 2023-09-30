@@ -4,6 +4,7 @@ import MainArticle from "./components/molecules/main-article/main-article";
 import Head from "next/head";
 import { Metadata } from "next";
 import { ArticleCarouselSection } from "./components/organisms/article-carousel-section/article-carousel-section";
+import { articleSectionTitle } from "./constants/article-section-title";
 
 export const metadata: Metadata = {
   title: `${mainArticleContent.title} | Filta Skills Test App`,
@@ -21,7 +22,8 @@ export function Home() {
       <main className="min-h-screen py-24  min-[320px]:py-10 min-[320px]:px-10 md:px-20">
         <MainArticle articleContent={mainArticleContent} />
         <ArticleCarouselSection
-          title="All the latest from AEG"
+          className="pt-48"
+          title={articleSectionTitle}
           articles={articlesData}
         />
       </main>

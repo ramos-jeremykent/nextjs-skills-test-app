@@ -5,15 +5,16 @@ import ArticleSectionTitle from "../../atoms/article-section-title/article-secti
 
 type ArticleCarouselSectionProps = {
   articles: ArticleCardModel[];
+  className?: string;
   title: string;
 };
 
 export function ArticleCarouselSection(props: ArticleCarouselSectionProps) {
-  const { articles, title } = props;
+  const { articles, className, title } = props;
 
   return (
     <>
-      <div className="pt-20">
+      <div className={className}>
         <ArticleSectionTitle title={title} />
       </div>
       <div>

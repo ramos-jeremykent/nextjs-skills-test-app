@@ -14,7 +14,10 @@ export interface ArticleCardModel {
   title: string;
   excerpt: string;
   link: string;
-  main_photo: string;
+  image: {
+    alt: string;
+    src: string;
+  };
 }
 
 export interface ArticleFooter {
